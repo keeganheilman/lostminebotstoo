@@ -7,6 +7,9 @@ def twitter_auth(
         c_secret=None,
         a_token=None,
         a_token_secret=None):
+    """
+    Return: tweepy API object (with keys and secrets)
+    """
     secret = Secret()
     consumer_key = c_key or secret.consumer_key
     consumer_secret = c_secret or secret.consumer_secret
@@ -25,6 +28,9 @@ def sql_auth(
         s_host=None,
         s_port=None,
         s_db=None):
+    """
+    Return: psycopg2 cursor object (connected) 
+    """
     secret = Secret()
     sql_user = s_user or secret.sql_username
     sql_pw = s_pw or secret.sql_pw
@@ -32,6 +38,7 @@ def sql_auth(
     sql_port = s_port or secret.sql_port
     sql_db = s_db or secret.sql_db
     cursor=None
+
     try:
         conn = psycopg2.connect(
             user=sql_user,
