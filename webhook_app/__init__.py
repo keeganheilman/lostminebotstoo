@@ -8,7 +8,7 @@ def create_app(test_config=None):
     # ref: https://towardsdatascience.com/how-to-set-up-a-production-grade-flask-application-using-application-factory-pattern-and-celery-90281349fb7a
     app = Flask(__name__)
     
-    from webhook_app.config import DevelopmentConfig
+    from webhook_app.config import DevelopmentConfig, ProductionConfig
     FLASK_CONFIG_TYPE = os.getenv('FLASK_CONFIG_TYPE', default = 'DevelopmentConfig')
     app.config.from_object(FLASK_CONFIG_TYPE)
 
