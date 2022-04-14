@@ -14,7 +14,7 @@ bp = Blueprint('webhooks', __name__)
   
 @bp.route('/hello', methods=['GET'])
 def hello():
-    print(request.json)
+    # print(request.json)
     return 'Hello World!'
 
 

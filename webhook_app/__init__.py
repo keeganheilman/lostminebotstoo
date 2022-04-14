@@ -9,7 +9,7 @@ def create_app(test_config=None):
     app = Flask(__name__)
     
     from webhook_app.config import DevelopmentConfig, ProductionConfig
-    FLASK_CONFIG_TYPE = os.getenv('FLASK_CONFIG_TYPE', default = 'DevelopmentConfig')
+    FLASK_CONFIG_TYPE = ProductionConfig
     app.config.from_object(FLASK_CONFIG_TYPE)
 
     from webhook_app.models import db
