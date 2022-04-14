@@ -1,1 +1,1 @@
-web: gunicorn webhook_app
+web: gunicorn webhook_app:create_app()
