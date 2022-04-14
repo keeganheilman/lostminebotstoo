@@ -20,3 +20,9 @@ def create_app(test_config=None):
   
     return app
 
+application = create_app()
+
+@application.cli.command()
+def createdb():
+    from webhook_app.models import db
+    db.create_all()
